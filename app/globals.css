@@ -2,26 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
+.bg-main {
+  background: radial-gradient(
+      99.58% 264.01% at 2% 3.87%,
+      #8f4791 0%,
+      #d9659c 36.65%,
+      #f7a050 75.64%,
+      #faa051 88.02%,
+      #cf642d 100%
     )
-    rgb(var(--background-start-rgb));
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 }
