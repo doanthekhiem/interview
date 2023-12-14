@@ -7,15 +7,7 @@ import { useEffect, useState } from "react";
 
 const Wallet = () => {
   const [userAcount, setUserAcount] = useState<any>(null);
-  const getAptosWallet = () => {
-    if ("aptos" in window) {
-      return window.aptos;
-    } else {
-      window.open("https://petra.app/", `_blank`);
-    }
-  };
-
-  const wallet: any = getAptosWallet();
+  const [wallet, setWallet] = useState<any>(null);
   const connectWallet = async () => {
     try {
       await wallet.connect();
@@ -40,9 +32,15 @@ const Wallet = () => {
   };
 
   useEffect(() => {
-    if (wallet) {
-      getWallet();
-    }
+    const getAptosWallet = () => {
+      if (typeof window !== "undefined" && "aptos" in window) {
+        return window.aptos;
+      } else {
+        // window.open("https://petra.app/", `_blank`);
+      }
+    };
+
+    setWallet(getAptosWallet());
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-const LauncherApp = () => {
+const LauncherApp = ({ isLoggedIn }: any) => {
   return (
     <div className="m-auto max-w-7xl flex gap-10 pt-[200px] flex-col h-full">
       <div className="text-white text-28-32 font-bold">
@@ -22,25 +22,4 @@ const LauncherApp = () => {
     </div>
   );
 };
-export async function getServerSideProps(context: any) {
-  const { req, resolvedUrl } = context;
-  const accessToken = req?.cookies?.access_token;
-
-  if (!accessToken) {
-    // Nếu không có access_token, redirect về trang chủ
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      isLoggedIn: !!accessToken,
-    },
-  };
-}
-
 export default LauncherApp;
