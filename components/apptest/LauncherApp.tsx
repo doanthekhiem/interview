@@ -9,8 +9,10 @@ const LauncherApp = () => {
         don't let them see the second page`}
         <br />
         {`4 Photoshop phần white part out ‘testX’ logo và dùng chữ test X => cho phần ‘Explore and Earn on
-        testX’ <br />`}
-        {`5 The next step is to deploy your work on vercel. <br />`}
+        testX’`}
+        <br />
+        {`5 The next step is to deploy your work on vercel. `}
+        <br />
         {`6 Block access for IP from Japan.`}
         <br />
         {`7 Share the vercel link along with your code (github link to the repo).`}
@@ -20,5 +22,25 @@ const LauncherApp = () => {
     </div>
   );
 };
+export async function getServerSideProps(context: any) {
+  const { req, resolvedUrl } = context;
+  const accessToken = req?.cookies?.access_token;
+
+  if (!accessToken) {
+    // Nếu không có access_token, redirect về trang chủ
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      isLoggedIn: !!accessToken,
+    },
+  };
+}
 
 export default LauncherApp;

@@ -1,28 +1,27 @@
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import { useEffect } from "react";
-
+import { getCookie, setCookie, deleteCookie } from "cookies-next";
 const CustomGoogleLoginButton = ({ isLogin, setIsLogin }: any) => {
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       if (tokenResponse?.access_token) {
-        localStorage.setItem("access_token", tokenResponse.access_token);
+        setCookie("access_token", tokenResponse.access_token); // Lưu vào cookie
         setIsLogin(true);
       }
     },
     onError: () => {
       console.log("Login Failed");
-      // Xử lý khi đăng nhập thất bại
     },
   });
 
   const logout = () => {
     googleLogout();
-    localStorage.removeItem("access_token");
+    deleteCookie("access_token"); // Xóa cookie
     setIsLogin(false);
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("access_token");
+    const token = getCookie("access_token");
     setIsLogin(!!token);
   }, []);
 
