@@ -1,17 +1,22 @@
+"use client";
 import logo from "@/assests/images/logo.png";
+import logoCustom from "@/assests/images/logo-customer.png";
 import Image from "next/image";
 import Link from "next/link";
-
+import LoginViaGoogle from "./LoginViaGoogle";
+import { useState } from "react";
 const HomePage = () => {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <div className="m-auto max-w-7xl">
       <div className="pt-[100px] px-9 flex justify-between items-start">
         <div>
           <div className="font-normal text-white text-68-80">Explore and Earn</div>
-          <div className="flex gap-8 items-center">
+          <div className="flex gap-3 items-center">
             <div className="font-normal text-white text-68-80">on</div>
             <div>
-              <Image src={logo} alt="logo" height={83} width={135} />
+              <Image src={logoCustom} alt="logo" height={83} width={135} />
             </div>
           </div>
         </div>
@@ -29,14 +34,14 @@ const HomePage = () => {
             Sign up
           </div>
         </div>
-        <div className="rounded-full col-span-1 bg-[#7BB8F1] h-10 text-white text-18-32 font-bold flex items-center justify-center">
-          Log in
-        </div>
-        <Link href={"/launch-app"} target="_blank">
-          <div className="rounded-full col-span-1 bg-white h-10 text-[#17344F] text-18-32 font-bold flex items-center justify-center">
-            Launch App
-          </div>
-        </Link>
+        <LoginViaGoogle setIsLogin={setIsLogin} isLogin={isLogin} />
+        {isLogin && (
+          <Link href={"/launch-app"} target="_blank">
+            <div className="rounded-full col-span-1 bg-white h-10 text-[#17344F] text-18-32 font-bold flex items-center justify-center">
+              Launch App
+            </div>
+          </Link>
+        )}
       </div>
       <div
         className="px-4 rounded-[20px] flex items-center justify-around w-full border border-white h-[190px] mt-[85px]"

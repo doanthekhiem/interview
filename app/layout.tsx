@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const inter = Inter({ subsets: ["vietnamese"] });
 
@@ -13,12 +14,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="w-full">
-          <Header />
-          <div className="bg-main h-screen">{children}</div>
-        </div>
-      </body>
+      <GoogleOAuthProvider clientId="891054951439-ke1btjjsh05sschhtdvd72t8g9kumsll.apps.googleusercontent.com">
+        <body className={inter.className}>
+          <div className="w-full">
+            <Header />
+            <div className="bg-main h-screen">{children}</div>
+          </div>
+        </body>
+      </GoogleOAuthProvider>
     </html>
   );
 }
