@@ -26,3 +26,13 @@ export const MENU: IMenu[] = [
     url: "/use-cases",
   },
 ];
+
+export const shortenString = (str: string) => {
+  if (!str) {
+    return;
+  }
+  if (str?.length <= 8) {
+    return str;
+  }
+  return `${str.substring(0, 4)}...${str.substring(str.length - 4)}`;
+};

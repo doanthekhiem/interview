@@ -24,7 +24,7 @@ const HomePage = () => {
       </div>
       <div className="px-9 pt-8 grid grid-cols-2 gap-5 max-w-[423px]">
         <div className="col-span-2 flex items-center rounded-full bg-[#F2F5FA] h-10 px-[10px]">
-          <input className="border-none bg-[#F2F5FA] focus:border-none active:border-none" />
+          <input className="border-none bg-[#F2F5FA] focus:border-none active:border-none focus:outline-none ml-3" />
           <div className="rounded-full bg-[#F5B4BB] h-[30px] text-[#17344F] text-16-22 w-[118px] flex items-center justify-center">
             Sign up
           </div>
