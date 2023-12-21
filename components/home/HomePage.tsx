@@ -1,9 +1,8 @@
-"use client";
 import logo from "@/assests/images/logo.png";
 import logoCustom from "@/assests/images/logo-customer.png";
 import Image from "next/image";
 import Link from "next/link";
-import LoginViaGoogle from "./LoginViaGoogle";
+import LoginViaGoogle from "../wallet/LoginViaGoogle";
 import { useState } from "react";
 const HomePage = () => {
   const [isLogin, setIsLogin] = useState(false);

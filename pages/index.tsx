@@ -1,11 +1,10 @@
-import HomePage from "@/components/layout/HomePage";
+import HomePage from "@/components/home/HomePage";
 import Layout from "@/components/layout/layout";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <Layout>
       <HomePage />
-    </main>
+    </Layout>
   );
 }

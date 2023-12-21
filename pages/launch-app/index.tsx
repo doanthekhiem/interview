@@ -1,10 +1,11 @@
 import LauncherApp from "@/components/apptest/LauncherApp";
+import Layout from "@/components/layout/layout";
 
 export default function Home() {
   return (
-    <main>
+    <Layout>
       <LauncherApp />
-    </main>
+    </Layout>
   );
 }
 
