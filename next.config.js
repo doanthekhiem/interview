@@ -7,7 +7,7 @@ module.exports = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ["storage.googleapis.com", "i.pravatar.cc"],
+    domains: ["storage.googleapis.com", "i.pravatar.cc", "static.debank.com"],
   },
   modularizeImports: {
     "@material-ui/core/": {

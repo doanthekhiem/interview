@@ -25,7 +25,6 @@ const MuiThemeConfig = createTheme({
     },
   },
   typography: {
-    // Cài đặt font chữ mặc định là "Montserrat"
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   components: {
@@ -49,7 +48,6 @@ const MuiThemeConfig = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          minWidth: "100px",
           "&.MuiButton-containedPrimary": {
             color: "white",
           },
@@ -58,7 +56,21 @@ const MuiThemeConfig = createTheme({
     },
     MuiOutlinedInput: {
       defaultProps: {
-        size: "small", // Đặt size mặc định là 'small' cho OutlinedInput
+        size: "small",
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        head: {
+          fontWeight: "bold",
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: "12px",
+        },
       },
     },
   },

@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div className="w-full">
       <Header />
-      <div className="h-screen">
+      <div className="bg-[#f7f8fa]">
         <div className="m-auto max-w-7xl p-4">{children}</div>
       </div>
     </div>

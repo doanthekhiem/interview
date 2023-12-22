@@ -7,8 +7,8 @@ import Wallet from "../wallet/Wallet";
 
 const Header = () => {
   return (
-    <div className="w-full h-[88px] flex items-center shadow-md">
-      <div className="m-auto w-full max-w-7xl flex items-center gap-[72px]">
+    <div className="w-full h-[88px] flex items-center shadow-md bg-main">
+      <div className="m-auto w-full px-4 max-w-7xl flex items-center gap-[72px]">
         <Link href={"/"}>
           <Image src={logo} alt="logo" height={50} width={135} className="h-auto" />
         </Link>

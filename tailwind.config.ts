@@ -12,6 +12,7 @@ const config: Config = {
         primary: "#924992",
         "neutral-7": "#596F78",
         "neutral-9": "#17344F",
+        success: "#28a745",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
