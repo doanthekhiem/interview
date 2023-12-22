@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material";
 const MuiThemeConfig = createTheme({
   palette: {
     primary: {
-      main: "#46AED7", // Màu sắc chính
+      main: "#924992", // Màu sắc chính
     },
     secondary: {
       main: "rgb(142, 101, 211)", // Màu sắc phụ

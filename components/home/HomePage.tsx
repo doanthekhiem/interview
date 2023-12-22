@@ -8,7 +8,7 @@ const HomePage = () => {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
-    <div className="m-auto max-w-7xl">
+    <div className="m-auto max-w-7xl bg-main">
       <div className="pt-[100px] px-9 flex justify-between items-start">
         <div>
           <div className="font-normal text-white text-68-80">Explore and Earn</div>
@@ -21,7 +21,7 @@ const HomePage = () => {
         </div>
         <div className="flex flex-col items-center w-[225px] justify-center h-[121px] rounded-[20px] bg-white">
           <div>
-            <Image src={logo} alt="logo" height={54} width={104} />
+            <Image src={logo} alt="logo" height={54} width={104} className="h-auto" />
           </div>
           <div className="text-[#8795AF] text-12-18">test Front end interview 1</div>
         </div>

@@ -52,7 +52,7 @@ const Wallet = () => {
     >
       {userAcount ? (
         <div className="text-neutral-9 font-bold text-16-22 flex items-center gap-1" onClick={disconnectWallet}>
-          <Image src={logo} alt="logo" height={27} width={27} />
+          <Image src={logo} alt="logo" height={27} width={27} className="h-auto"/>
           {shortenString(userAcount?.address)}
         </div>
       ) : (

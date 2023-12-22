@@ -21,9 +21,9 @@ export const MENU: IMenu[] = [
     url: "/tokens",
   },
   {
-    id: "Use Cases",
-    name: "Use Cases",
-    url: "/use-cases",
+    id: "portfolio",
+    name: "Portfolio",
+    url: "/my-portfolio",
   },
 ];
 
